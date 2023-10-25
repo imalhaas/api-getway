@@ -1,16 +1,29 @@
 package br.com.erudio.apigetway.Model;
 
+import jakarta.persistence.*;
+import lombok.NonNull;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "person")
 public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "first_name")
+    @NonNull
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(length = 100)
     private String address;
+    @Column( length = 6)
     private String gender;
 
     public Person(){}

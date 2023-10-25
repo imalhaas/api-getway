@@ -1,12 +1,6 @@
 package br.com.erudio.apigetway.Exceptions.Math;
 
 import br.com.erudio.apigetway.Converter.NumberConverter;
-import br.com.erudio.apigetway.Exceptions.UnsupportedMathOperationException;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.concurrent.atomic.AtomicLong;
 
 public class SimpleMath {
 
