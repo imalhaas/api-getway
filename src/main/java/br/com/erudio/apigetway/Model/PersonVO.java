@@ -1,32 +1,21 @@
 package br.com.erudio.apigetway.Model;
 
-import jakarta.persistence.*;
-import lombok.NonNull;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-@Entity
-@Table(name = "person")
-public class Person implements Serializable {
+public class PersonVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "first_name")
-    @NonNull
     private String firstName;
-    @Column(name = "last_name")
     private String lastName;
-    @Column(length = 100)
+
     private String address;
-    @Column( length = 6)
     private String gender;
 
-    public Person(){}
+    public PersonVO(){}
 
     public Long getId() {
         return id;
@@ -71,8 +60,8 @@ public class Person implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
+        if (!(o instanceof PersonVO)) return false;
+        PersonVO person = (PersonVO) o;
         return id.equals(person.id) && getFirstName().equals(person.getFirstName()) && getLastName().equals(person.getLastName()) && getAddress().equals(person.getAddress()) && getGender().equals(person.getGender());
     }
 
