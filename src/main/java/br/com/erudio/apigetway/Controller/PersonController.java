@@ -1,5 +1,5 @@
 package br.com.erudio.apigetway.Controller;
-import br.com.erudio.apigetway.Model.PersonVO;
+import br.com.erudio.apigetway.Model.Person;
 import br.com.erudio.apigetway.Services.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,19 +17,19 @@ public class PersonController {
    private PersonServices services;
 
     @GetMapping(value="{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public PersonVO findById(@PathVariable(value = "id") Long id) {
+    public Person findById(@PathVariable(value = "id") Long id) {
         return services.findById(id);
     }
     @PostMapping(
     produces = MediaType.APPLICATION_JSON_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE)
-    public PersonVO create (@RequestBody PersonVO person) {
+    public Person create (@RequestBody Person person) {
         return services.create(person);
     }
     @PutMapping(value = "{id}",
     produces = MediaType.APPLICATION_JSON_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE)
-    public PersonVO update (@RequestBody PersonVO person) {
+    public Person update (@RequestBody Person person) {
         return services.update(person);
     }
 
@@ -41,7 +41,7 @@ public class PersonController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<PersonVO> findAll(){
+    public List<Person> findAll(){
         return services.findAll();
     }
 }
